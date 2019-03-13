@@ -1,13 +1,9 @@
 class ChatroomController < ApplicationController
-	def index
+  before_action :require_user
 
-	end 
+  def index
+    @message = Message.new
+    @messages = Message.custom_display
+  end
 
-	def new
-		
-	end 
-
-	def show
-		
-	end 
 end
